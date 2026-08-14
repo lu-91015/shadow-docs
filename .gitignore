@@ -1,0 +1,18 @@
+# Jekyll 构建产物
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# 依赖 / 缓存
+.bundle/
+vendor/
+node_modules/
+Gemfile.lock
+
+# 编辑器 / 系统
+.DS_Store
+*.swp
+
+# 代理 / 工具内部数据
+.workbuddy/

@@ -1,0 +1,44 @@
+title: shadow Programming Language
+description: >-
+  shadow 是一门系统级编程语言，原生支持 LLVM 后端、trait/impl、
+  模式匹配与泛型，编译管线完整自举。
+lang: zh-CN
+
+# ===== 版本信息（发版时只需改这里，或用 tools/sync_version.sh 自动同步）=====
+# 全站下载链接、首页徽标、版本页「最新」判定都读取这个变量。
+shadow_version: "0.5.0"
+# GitHub 仓库（owner/repo），用于拼下载直链
+github_repo: "lu-91015/shadow"
+
+# 不使用 gem-based theme，完全用 _layouts 下的自定义布局
+# （default.html / doc.html）。GitHub Pages 原生支持此模式。
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # 不设 default_lang：shadow 语言无 rouge lexer，
+    # 未标记语言的代码块保持纯文本（CSS 已提供基础样式）
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: pretty
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - README.md

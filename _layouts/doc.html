@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="doc">
+  <header class="doc-header">
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="doc-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+  <div class="doc-layout">
+    <div class="doc-body">
+      {{ content }}
+    </div>
+    <aside class="doc-toc" aria-label="本页目录">
+      <div class="toc-inner">
+        <p class="toc-title">本页目录</p>
+        {% page_toc %}
+      </div>
+    </aside>
+  </div>
+  <nav class="doc-pager">
+    {% if page.prev %}<a class="prev" href="{{ page.prev | relative_url }}">&larr; 上一章</a>{% endif %}
+    {% if page.next %}<a class="next" href="{{ page.next | relative_url }}">下一章 &rarr;</a>{% endif %}
+  </nav>
+</article>
