@@ -3,7 +3,7 @@ layout: doc
 title: "库参考"
 summary: "shadow 0.5 内置函数与标准库 API。"
 permalink: /api/
-prev: /modules/
+prev: /package-manager/
 next: /toolchain/
 ---
 

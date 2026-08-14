@@ -4,7 +4,7 @@ title: "模块系统"
 summary: "dsb 声明、import 导入与 pub 可见性控制。"
 permalink: /modules/
 prev: /error-handling/
-next: /api/
+next: /package-manager/
 ---
 
 shadow 的模块系统基于文件：**一个 `.shadow` 文件 = 一个模块**。模块用 `dsb` 声明名字，用 `import` 跨文件引用，用 `pub` 控制哪些项对外可见。

@@ -74,32 +74,38 @@
   weight: 12
   in_nav: true
 
+- title: "包管理（SPK）"
+  nav_title: "包管理"
+  url: /package-manager/
+  weight: 13
+  in_nav: true
+
 - title: "库参考"
   nav_title: "库参考"
   url: /api/
-  weight: 13
+  weight: 14
   in_nav: true
 
 - title: "工具链"
   nav_title: "工具链"
   url: /toolchain/
-  weight: 14
+  weight: 15
   in_nav: true
 
 - title: "LSP 语言服务器"
   nav_title: "LSP"
   url: /lsp/
-  weight: 15
+  weight: 16
   in_nav: true
 
 - title: "构建指南"
   nav_title: "构建"
   url: /building/
-  weight: 16
+  weight: 17
   in_nav: true
 
 - title: "版本"
   nav_title: "版本"
   url: /versions/
-  weight: 17
+  weight: 18
   in_nav: true

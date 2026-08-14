@@ -14,6 +14,18 @@ next: /syntax/
 1. **shadow 编译器**（`shadow`）：将 `.shadow` 源码编译为 LLVM IR，并可直接链接运行。
 2. **LLVM 工具链**：`llc` / `clang++`（仅 `--run` 链接时使用，随编译器分发环境）。
 
+## 创建项目
+
+用 `shadow -init` 初始化一个新项目（注意是 **`-init`**，带前导短横，不是 `init`）：
+
+```bash
+shadow -init myapp     # 新建 myapp/ 并生成 myapp/shadow.sbg
+cd myapp
+```
+
+它会在目录里生成 `shadow.sbg` 项目清单（包名取目录名，版本 `0.1.0`），记录包信息与依赖。
+包管理、依赖声明与 `.spk` 包的完整用法见 [包管理（SPK）](/package-manager/)。
+
 ## 第一个程序
 
 创建 `hello.shadow`：
