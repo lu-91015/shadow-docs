@@ -1,12 +1,12 @@
 ---
 layout: default
-title: "shadow — 系统级编程语言"
+title: "shadow — 粉丝向语言"
 description: "shadow 是一门原生 LLVM 后端、内建 trait/impl、模式匹配与泛型的粉丝向语言（v0.5）。"
 ---
 
 <section class="hero">
   <span class="badge">v{{ site.shadow_version }} · 编译管线完整自举</span>
-  <h1>用 <span class="accent">shadow</span> 写系统级代码</h1>
+  <h1>用 <span class="accent">shadow</span> 写粉丝向代码</h1>
   <p class="tagline">
     shadow 是一门原生 LLVM 后端、内建 trait/impl、模式匹配与泛型的粉丝向语言。
     语法简洁，类型严格，编译期保证内存安全。

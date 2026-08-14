@@ -1,6 +1,6 @@
 title: shadow Programming Language
 description: >-
-  shadow 是一门系统级编程语言，原生支持 LLVM 后端、trait/impl、
+  shadow 是一门粉丝向语言，原生支持 LLVM 后端、trait/impl、
   模式匹配与泛型，编译管线完整自举。
 lang: zh-CN
 
