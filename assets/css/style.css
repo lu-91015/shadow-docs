@@ -139,6 +139,70 @@ a:hover { color: var(--brand-700); }
   .nav-list a.active { color: var(--brand-300); background: rgba(99, 102, 241, 0.12); }
 }
 
+/* 顶栏分组下拉（一级条目过多时用它收纳，见 _data/navigation.yml 的 children_group） */
+.has-dropdown { position: relative; }
+.nav-drop-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 0;
+  background: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.nav-drop-toggle:hover { background: var(--bg-muted); color: var(--text); }
+.nav-drop-toggle.active { color: var(--brand-600); background: var(--brand-50); }
+.nav-caret {
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: .6;
+  transition: transform .15s;
+}
+.has-dropdown:hover .nav-caret,
+.has-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 172px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  display: none;
+  z-index: 60;
+}
+.has-dropdown:hover > .nav-dropdown,
+.has-dropdown:focus-within > .nav-dropdown { display: block; }
+.nav-dropdown a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+.nav-dropdown a:hover { background: var(--bg-muted); color: var(--text); }
+.nav-dropdown a.active { color: var(--brand-600); background: var(--brand-50); }
+@media (prefers-color-scheme: dark) {
+  .nav-drop-toggle.active,
+  .nav-dropdown a.active { color: var(--brand-300); background: rgba(99, 102, 241, 0.12); }
+}
+
 /* 移动端汉堡菜单 */
 .nav-toggle { display: none; }
 .nav-toggle-label {
@@ -181,6 +245,32 @@ a:hover { color: var(--brand-700); }
     pointer-events: auto;
   }
   .nav-list a { padding: 12px; border-radius: 0; }
+  /* 移动端不做悬停下拉：分组直接平铺展开 */
+  .has-dropdown { position: static; width: 100%; }
+  .nav-drop-toggle {
+    width: 100%;
+    padding: 14px 12px 6px;
+    border-radius: 0;
+    font-size: 12px;
+    letter-spacing: .04em;
+    color: var(--text-muted);
+    cursor: default;
+  }
+  .nav-drop-toggle:hover,
+  .nav-drop-toggle.active { background: none; }
+  .nav-caret { display: none; }
+  .nav-dropdown,
+  .has-dropdown:hover > .nav-dropdown,
+  .has-dropdown:focus-within > .nav-dropdown {
+    position: static;
+    display: block;
+    min-width: 0;
+    padding: 0 0 0 12px;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+  .nav-dropdown a { padding: 12px; border-radius: 0; }
 }
 
 /* ===== 主体 ===== */

@@ -1,6 +1,11 @@
 # 顶部导航数据（在 default.html 中通过 site.data.navigation 引用）
-# 使用 weight 控制顺序；nav_title 为顶栏显示文本
+# 顺序 = 本文件的书写顺序（模板不做 sort）；weight 仅作人工参考
 # in_nav: true 才会出现在顶栏
+#
+# 两级导航约定：
+#   children_group: "X"  → 该条目是下拉菜单的宿主，自身不是链接
+#   nav_group: "X"       → 该条目归属于名为 X 的下拉菜单，不在一级栏显示
+# 一级条目请控制在 10 个以内，否则 1200px 顶栏会溢出。
 
 - title: "关于 shadow"
   nav_title: "关于"
@@ -20,92 +25,110 @@
   weight: 3
   in_nav: true
 
-- title: "语法基础"
-  nav_title: "语法"
-  url: /syntax/
+# ↓ 下拉菜单宿主：语言（成员见下方 nav_group: "语言"）
+- title: "语言指南"
+  nav_title: "语言"
+  children_group: "语言"
   weight: 4
   in_nav: true
 
-- title: "类型系统"
-  nav_title: "类型"
-  url: /types/
+- title: "语法基础"
+  nav_title: "语法基础"
+  url: /syntax/
+  nav_group: "语言"
   weight: 5
+  in_nav: true
+
+- title: "类型系统"
+  nav_title: "类型系统"
+  url: /types/
+  nav_group: "语言"
+  weight: 6
   in_nav: true
 
 - title: "控制流"
   nav_title: "控制流"
   url: /control-flow/
-  weight: 6
+  nav_group: "语言"
+  weight: 7
   in_nav: true
 
 - title: "函数与闭包"
-  nav_title: "函数"
+  nav_title: "函数与闭包"
   url: /functions/
-  weight: 7
+  nav_group: "语言"
+  weight: 8
   in_nav: true
 
 - title: "结构体"
   nav_title: "结构体"
   url: /structs/
-  weight: 8
-  in_nav: false
+  nav_group: "语言"
+  weight: 9
+  in_nav: true
 
 - title: "枚举"
   nav_title: "枚举"
   url: /enums/
-  weight: 9
-  in_nav: false
+  nav_group: "语言"
+  weight: 10
+  in_nav: true
 
 - title: "模式匹配"
   nav_title: "模式匹配"
   url: /pattern-matching/
-  weight: 10
+  nav_group: "语言"
+  weight: 11
   in_nav: true
 
 - title: "错误处理"
   nav_title: "错误处理"
   url: /error-handling/
-  weight: 11
-  in_nav: true
-
-- title: "模块系统"
-  nav_title: "模块"
-  url: /modules/
+  nav_group: "语言"
   weight: 12
   in_nav: true
 
-- title: "包管理（SPK）"
-  nav_title: "包管理"
-  url: /package-manager/
+- title: "模块系统"
+  nav_title: "模块系统"
+  url: /modules/
+  nav_group: "语言"
   weight: 13
   in_nav: true
 
+- title: "包管理（SPK）"
+  nav_title: "包管理（SPK）"
+  url: /package-manager/
+  nav_group: "语言"
+  weight: 14
+  in_nav: true
+
+# ↓ 一级条目
 - title: "库参考"
   nav_title: "库参考"
   url: /api/
-  weight: 14
+  weight: 15
   in_nav: true
 
 - title: "工具链"
   nav_title: "工具链"
   url: /toolchain/
-  weight: 15
+  weight: 16
   in_nav: true
 
 - title: "LSP 语言服务器"
   nav_title: "LSP"
   url: /lsp/
-  weight: 16
+  weight: 17
   in_nav: true
 
 - title: "构建指南"
   nav_title: "构建"
   url: /building/
-  weight: 17
+  weight: 18
   in_nav: true
 
 - title: "版本"
   nav_title: "版本"
   url: /versions/
-  weight: 18
+  weight: 19
   in_nav: true
