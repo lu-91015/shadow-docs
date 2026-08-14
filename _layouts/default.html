@@ -26,29 +26,14 @@
           <span></span><span></span><span></span>
         </label>
         <ul class="nav-list">
-          {%- assign current_url = page.url | remove: "/" | remove: ".html" -%}
-          {%- for item in site.data.navigation -%}
-            {%- unless item.in_nav -%}{%- continue -%}{%- endunless -%}
-            {%- if item.children_group -%}
-              {%- assign kids = site.data.navigation | where: "nav_group", item.children_group -%}
-              {%- assign grp_active = false -%}
-              {%- for kid in kids -%}
-                {%- assign kid_url = kid.url | remove: "/" -%}
-                {%- if current_url == kid_url -%}{%- assign grp_active = true -%}{%- endif -%}
-              {%- endfor -%}
-              <li class="has-dropdown">
-                <button type="button" class="nav-drop-toggle{% if grp_active %} active{% endif %}" aria-expanded="false">{{ item.nav_title }}<span class="nav-caret" aria-hidden="true"></span></button>
-                <ul class="nav-dropdown">
-                  {%- for kid in kids -%}
-                    {%- assign kid_url = kid.url | remove: "/" -%}
-                    <li><a href="{{ kid.url | relative_url }}" class="{% if current_url == kid_url %}active{% endif %}">{{ kid.nav_title }}</a></li>
-                  {%- endfor -%}
-                </ul>
-              </li>
-            {%- elsif item.nav_group == nil -%}
-              {%- assign item_url = item.url | remove: "/" -%}
-              <li><a href="{{ item.url | relative_url }}" class="{% if current_url == item_url %}active{% endif %}">{{ item.nav_title }}</a></li>
-            {%- endif -%}
+          {%- assign cur_section = nil -%}
+          {%- for s in site.data.navigation.sections -%}
+            {%- for p in s.prefixes -%}
+              {%- if page.url contains p -%}{%- assign cur_section = s -%}{%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+          {%- for s in site.data.navigation.sections -%}
+          <li><a href="{{ s.landing | relative_url }}" class="nav-tab{% if s.title == cur_section.title %} active{% endif %}">{{ s.title }}</a></li>
           {%- endfor -%}
         </ul>
       </nav>

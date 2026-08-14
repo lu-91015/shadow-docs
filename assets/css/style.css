@@ -72,7 +72,7 @@ a:hover { color: var(--brand-700); }
 
 /* ===== 布局 ===== */
 .wrapper {
-  max-width: 1200px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -139,68 +139,21 @@ a:hover { color: var(--brand-700); }
   .nav-list a.active { color: var(--brand-300); background: rgba(99, 102, 241, 0.12); }
 }
 
-/* 顶栏分组下拉（一级条目过多时用它收纳，见 _data/navigation.yml 的 children_group） */
-.has-dropdown { position: relative; }
-.nav-drop-toggle {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 8px 10px;
-  border: 0;
-  background: none;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-soft);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background .15s, color .15s;
-}
-.nav-drop-toggle:hover { background: var(--bg-muted); color: var(--text); }
-.nav-drop-toggle.active { color: var(--brand-600); background: var(--brand-50); }
-.nav-caret {
-  width: 0;
-  height: 0;
-  border-left: 3.5px solid transparent;
-  border-right: 3.5px solid transparent;
-  border-top: 4px solid currentColor;
-  opacity: .6;
-  transition: transform .15s;
-}
-.has-dropdown:hover .nav-caret,
-.has-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
-.nav-dropdown {
+/* 顶栏分区 tab（由 _data/navigation.yml 的 sections 渲染，见 default.html） */
+.nav-list a.nav-tab { position: relative; white-space: nowrap; }
+.nav-list a.nav-tab.active { color: var(--brand-600); background: transparent; font-weight: 600; }
+.nav-list a.nav-tab.active::after {
+  content: '';
   position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 172px;
-  margin: 0;
-  padding: 6px;
-  list-style: none;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: var(--shadow-lg);
-  display: none;
-  z-index: 60;
+  left: 10px;
+  right: 10px;
+  bottom: -2px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--brand-500);
 }
-.has-dropdown:hover > .nav-dropdown,
-.has-dropdown:focus-within > .nav-dropdown { display: block; }
-.nav-dropdown a {
-  display: block;
-  padding: 7px 10px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-soft);
-  white-space: nowrap;
-}
-.nav-dropdown a:hover { background: var(--bg-muted); color: var(--text); }
-.nav-dropdown a.active { color: var(--brand-600); background: var(--brand-50); }
 @media (prefers-color-scheme: dark) {
-  .nav-drop-toggle.active,
-  .nav-dropdown a.active { color: var(--brand-300); background: rgba(99, 102, 241, 0.12); }
+  .nav-list a.nav-tab.active { color: var(--brand-300); }
 }
 
 /* 移动端汉堡菜单 */
@@ -245,32 +198,7 @@ a:hover { color: var(--brand-700); }
     pointer-events: auto;
   }
   .nav-list a { padding: 12px; border-radius: 0; }
-  /* 移动端不做悬停下拉：分组直接平铺展开 */
-  .has-dropdown { position: static; width: 100%; }
-  .nav-drop-toggle {
-    width: 100%;
-    padding: 14px 12px 6px;
-    border-radius: 0;
-    font-size: 12px;
-    letter-spacing: .04em;
-    color: var(--text-muted);
-    cursor: default;
-  }
-  .nav-drop-toggle:hover,
-  .nav-drop-toggle.active { background: none; }
-  .nav-caret { display: none; }
-  .nav-dropdown,
-  .has-dropdown:hover > .nav-dropdown,
-  .has-dropdown:focus-within > .nav-dropdown {
-    position: static;
-    display: block;
-    min-width: 0;
-    padding: 0 0 0 12px;
-    background: none;
-    border: 0;
-    box-shadow: none;
-  }
-  .nav-dropdown a { padding: 12px; border-radius: 0; }
+  /* 移动端 tab 直接平铺为竖排 */
 }
 
 /* ===== 主体 ===== */
@@ -443,7 +371,7 @@ a:hover { color: var(--brand-700); }
 .feature-card p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
 
 /* ===== 文档页 ===== */
-.doc { max-width: 1160px; margin: 0 auto; }
+.doc { max-width: 1440px; margin: 0 auto; }
 .doc-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
 .doc-header h1 {
   font-size: 38px;
@@ -676,19 +604,74 @@ pre code {
 /* 锚点偏移（避免 sticky header 遮挡） */
 h2, h3, h4 { scroll-margin-top: 88px; }
 
-/* ===== 文档页：正文 + 右侧目录侧边栏 ===== */
+/* ===== 文档页：左栏分区目录 + 正文 + 右侧本页目录（三栏）===== */
 .doc-layout {
   display: flex;
   align-items: flex-start;
-  gap: 48px;
+  gap: 40px;
 }
+.doc-side {
+  flex: 0 0 220px;
+  position: sticky;
+  top: 88px;
+  align-self: flex-start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+.side-title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.side-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  border-left: 1px solid var(--border);
+}
+.side-list li { margin: 0; }
+.side-list a {
+  display: block;
+  margin-left: -1px;
+  padding: 6px 0 6px 14px;
+  border-left: 2px solid transparent;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-soft);
+  transition: color .15s, border-color .15s;
+}
+.side-list a:hover { color: var(--brand-600); }
+.side-list li.active > a,
+.side-list li.side-current > a {
+  color: var(--brand-600);
+  border-left-color: var(--brand-500);
+  font-weight: 600;
+}
+.side-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.side-switch a {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 3px 9px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  transition: color .15s, border-color .15s;
+}
+.side-switch a:hover { color: var(--brand-600); border-color: var(--brand-400); }
 .doc-body {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 760px;
 }
 .doc-toc {
-  flex: 0 0 232px;
+  flex: 0 0 220px;
   position: sticky;
   top: 88px;
   align-self: flex-start;
@@ -830,6 +813,13 @@ h2, h3, h4 { scroll-margin-top: 88px; }
 @media (max-width: 980px) {
   .doc-layout { flex-direction: column; gap: 24px; }
   .doc-body { max-width: 100%; }
+  .doc-side {
+    flex-basis: auto;
+    width: 100%;
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
   .doc-toc {
     flex-basis: auto;
     width: 100%;

@@ -7,6 +7,38 @@ layout: default
     {% if page.summary %}<p class="doc-summary">{{ page.summary }}</p>{% endif %}
   </header>
   <div class="doc-layout">
+    <aside class="doc-side" aria-label="分区目录">
+      <nav class="side-nav">
+        {%- assign cur_section = nil -%}
+        {%- for s in site.data.navigation.sections -%}
+          {%- for p in s.prefixes -%}
+            {%- if page.url contains p -%}{%- assign cur_section = s -%}{%- endif -%}
+          {%- endfor -%}
+        {%- endfor -%}
+        {%- if cur_section -%}
+        <p class="side-title">{{ cur_section.title }}</p>
+        {%- assign listed = "" -%}
+        <ul class="side-list">
+          {%- for pg in cur_section.pages -%}
+            {%- assign listed = listed | append: pg.url | append: " " -%}
+            <li class="{% if page.url == pg.url %}active{% endif %}"><a href="{{ pg.url | relative_url }}">{{ pg.title }}</a></li>
+          {%- endfor -%}
+          {%- unless listed contains page.url -%}
+            {%- if page.url != cur_section.landing and page.url != "/" -%}
+          <li class="active side-current"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+            {%- endif -%}
+          {%- endunless -%}
+        </ul>
+        <div class="side-switch">
+          {%- for s in site.data.navigation.sections -%}
+            {%- if s.title != cur_section.title -%}
+          <a href="{{ s.landing | relative_url }}">{{ s.title }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+        {%- endif -%}
+      </nav>
+    </aside>
     <div class="doc-body">
       {{ content }}
     </div>

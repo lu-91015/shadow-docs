@@ -1,134 +1,73 @@
-# 顶部导航数据（在 default.html 中通过 site.data.navigation 引用）
-# 顺序 = 本文件的书写顺序（模板不做 sort）；weight 仅作人工参考
-# in_nav: true 才会出现在顶栏
+# 顶部导航数据（在 default.html / doc.html 中通过 site.data.navigation.sections 引用）
 #
-# 两级导航约定：
-#   children_group: "X"  → 该条目是下拉菜单的宿主，自身不是链接
-#   nav_group: "X"       → 该条目归属于名为 X 的下拉菜单，不在一级栏显示
-# 一级条目请控制在 10 个以内，否则 1200px 顶栏会溢出。
+# 每个 section = 顶部一个分区 tab：
+#   title    : tab 显示名
+#   landing  : 点击 tab 跳转的 landing 页（通常是该区第一页/总览页）
+#   prefixes : 该分区覆盖的 url 前缀；用于判定「当前页属于哪个分区」
+#              （顶栏 tab 高亮 + 左栏渲染该区目录）；也用于把未显式列入
+#              pages 的子页（如 /api/builtins/...）自动归属到本区。
+#   pages    : 左栏显示的页面列表（title + url）；命中 prefixes 但未列入
+#              的当前页会自动追加为「当前页」项，保证深链可导航。
+# 顺序 = 本文件书写顺序（模板不做 sort）。
 
-- title: "关于 shadow"
-  nav_title: "关于"
-  url: /about/
-  weight: 1
-  in_nav: true
+sections:
+  - title: "入门"
+    landing: /getting-started/
+    prefixes:
+      - /about/
+      - /install/
+      - /getting-started/
+    pages:
+      - { title: "关于 shadow", url: /about/ }
+      - { title: "安装 shadow", url: /install/ }
+      - { title: "快速开始", url: /getting-started/ }
 
-- title: "安装 shadow"
-  nav_title: "安装"
-  url: /install/
-  weight: 2
-  in_nav: true
+  - title: "语言"
+    landing: /syntax/
+    prefixes:
+      - /syntax/
+      - /types/
+      - /control-flow/
+      - /functions/
+      - /structs/
+      - /enums/
+      - /pattern-matching/
+      - /error-handling/
+      - /modules/
+      - /package-manager/
+    pages:
+      - { title: "语法基础", url: /syntax/ }
+      - { title: "类型系统", url: /types/ }
+      - { title: "控制流", url: /control-flow/ }
+      - { title: "函数与闭包", url: /functions/ }
+      - { title: "结构体", url: /structs/ }
+      - { title: "枚举", url: /enums/ }
+      - { title: "模式匹配", url: /pattern-matching/ }
+      - { title: "错误处理", url: /error-handling/ }
+      - { title: "模块系统", url: /modules/ }
+      - { title: "包管理（SPK）", url: /package-manager/ }
 
-- title: "快速开始"
-  nav_title: "快速开始"
-  url: /getting-started/
-  weight: 3
-  in_nav: true
+  - title: "库参考"
+    landing: /api/
+    prefixes:
+      - /api/
+    pages:
+      - { title: "库参考总览", url: /api/ }
 
-# ↓ 下拉菜单宿主：语言（成员见下方 nav_group: "语言"）
-- title: "语言指南"
-  nav_title: "语言"
-  children_group: "语言"
-  weight: 4
-  in_nav: true
+  - title: "工具链"
+    landing: /toolchain/
+    prefixes:
+      - /toolchain/
+      - /lsp/
+      - /building/
+    pages:
+      - { title: "命令行工具", url: /toolchain/ }
+      - { title: "LSP 语言服务器", url: /lsp/ }
+      - { title: "从源码构建", url: /building/ }
 
-- title: "语法基础"
-  nav_title: "语法基础"
-  url: /syntax/
-  nav_group: "语言"
-  weight: 5
-  in_nav: true
-
-- title: "类型系统"
-  nav_title: "类型系统"
-  url: /types/
-  nav_group: "语言"
-  weight: 6
-  in_nav: true
-
-- title: "控制流"
-  nav_title: "控制流"
-  url: /control-flow/
-  nav_group: "语言"
-  weight: 7
-  in_nav: true
-
-- title: "函数与闭包"
-  nav_title: "函数与闭包"
-  url: /functions/
-  nav_group: "语言"
-  weight: 8
-  in_nav: true
-
-- title: "结构体"
-  nav_title: "结构体"
-  url: /structs/
-  nav_group: "语言"
-  weight: 9
-  in_nav: true
-
-- title: "枚举"
-  nav_title: "枚举"
-  url: /enums/
-  nav_group: "语言"
-  weight: 10
-  in_nav: true
-
-- title: "模式匹配"
-  nav_title: "模式匹配"
-  url: /pattern-matching/
-  nav_group: "语言"
-  weight: 11
-  in_nav: true
-
-- title: "错误处理"
-  nav_title: "错误处理"
-  url: /error-handling/
-  nav_group: "语言"
-  weight: 12
-  in_nav: true
-
-- title: "模块系统"
-  nav_title: "模块系统"
-  url: /modules/
-  nav_group: "语言"
-  weight: 13
-  in_nav: true
-
-- title: "包管理（SPK）"
-  nav_title: "包管理（SPK）"
-  url: /package-manager/
-  nav_group: "语言"
-  weight: 14
-  in_nav: true
-
-# ↓ 一级条目
-- title: "库参考"
-  nav_title: "库参考"
-  url: /api/
-  weight: 15
-  in_nav: true
-
-- title: "工具链"
-  nav_title: "工具链"
-  url: /toolchain/
-  weight: 16
-  in_nav: true
-
-- title: "LSP 语言服务器"
-  nav_title: "LSP"
-  url: /lsp/
-  weight: 17
-  in_nav: true
-
-- title: "构建指南"
-  nav_title: "构建"
-  url: /building/
-  weight: 18
-  in_nav: true
-
-- title: "版本"
-  nav_title: "版本"
-  url: /versions/
-  weight: 19
-  in_nav: true
+  - title: "版本"
+    landing: /versions/
+    prefixes:
+      - /versions/
+    pages:
+      - { title: "版本历史", url: /versions/ }
