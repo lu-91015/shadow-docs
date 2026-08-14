@@ -17,6 +17,14 @@ next: /getting-started/
   <p>离线自包含安装包：内置 LLVM 工具链与标准库，无需预装 VS / Windows SDK，<code>--run</code> 开箱即用。</p>
 </div>
 
+<div class="callout note">
+  <p class="callout-title">下载 shadow VS Code 扩展 {{ site.vscode_version }}</p>
+  <p>
+    <a class="btn btn-primary" href="https://github.com/{{ site.vscode_repo }}/releases/download/{{ site.vscode_version }}/shadow-{{ site.vscode_version }}.vsix">⬇ shadow-{{ site.vscode_version }}.vsix</a>
+  </p>
+  <p>官方扩展：<strong>运行文件</strong>命令（<code>shadow.exe --run</code>）、基于 <code>cindex</code> 的符号索引（跳转 / 引用 / 重命名）与<strong>重建符号索引</strong>命令。在 VS Code 扩展视图选择「从 VSIX 安装…」并选中该文件即可（详见 <a href="{{ '/lsp/' | relative_url }}">LSP 与编辑器集成</a>）。</p>
+</div>
+
 ## 概述
 
 shadow {{ site.shadow_version }} 提供**自包含安装包** `shadow-{{ site.shadow_version }}-setup.exe`，安装后无需在目标机器上安装

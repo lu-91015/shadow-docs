@@ -10,6 +10,10 @@ shadow_version: "0.5.0"
 # GitHub 仓库（owner/repo），用于拼下载直链
 github_repo: "lu-91015/shadow"
 
+# ===== VS Code 扩展（发版时同步改这里）=====
+vscode_version: "0.5.0"
+vscode_repo: "lu-91015/shadow-vscode"
+
 # 不使用 gem-based theme，完全用 _layouts 下的自定义布局
 # （default.html / doc.html）。GitHub Pages 原生支持此模式。
 markdown: kramdown

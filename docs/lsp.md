@@ -53,10 +53,13 @@ shadow --lsp
 }
 ```
 
-> **关于官方 VSCode 扩展**：0.5 的 M6（生态完整）阶段规划了 `shadow-vscode` 风格扩展
-> （`compilerPath` 指向 `shadow`、LSP 对接），目前**尚未随仓库发布**。在此之前，用任意
-> 支持「自定义命令 LSP」的编辑器插件（如 VS Code 的通用 LSP 客户端、Neovim 的
-> `lspconfig` + 外部服务器、Helix 的 `language-server` 配置）即可获得全部能力。
+> **官方 VS Code 扩展已发布**：`shadow-vscode` 提供「运行文件」命令（<code>shadow.exe --run</code>）、
+> 基于 <code>cindex</code> 的符号索引（定义跳转 / 跨文件引用 / 重命名）与「重建符号索引」命令。
+> <a class="btn btn-primary btn-sm" href="https://github.com/{{ site.vscode_repo }}/releases/download/{{ site.vscode_version }}/shadow-{{ site.vscode_version }}.vsix">⬇ 下载 shadow-vscode {{ site.vscode_version }}（.vsix）</a>
+>
+> 安装：在 VS Code 扩展视图选择「从 VSIX 安装…」并选中该文件即可。除了官方扩展，任意
+> 支持「自定义命令 LSP」的编辑器插件（如 Neovim 的 `lspconfig` + 外部服务器、Helix 的
+> `language-server` 配置）也可接入 `shadow --lsp` 获得全部能力。
 
 ## 功能清单（117 项）
 
@@ -148,7 +151,7 @@ LSP 诊断遵循 **LSP-3 区间模型**：
 
 ## 已知限制 / 后续
 
-- **官方 VSCode 扩展**尚未随仓库发布（见 M6 规划）；当前需用通用 LSP 客户端接入。
+- 官方 VS Code 扩展已发布（见上方下载框），含「运行文件」与 <code>cindex</code> 符号索引；其余细粒度配置随扩展迭代完善。
 - 含 native 绑定的标准库包（`std.base64` / `std.net` / `std.https` 等带 `.c`）在编辑器内的
   语义着色/跳转已支持，但其 native 编译链路在 `--run` 时才触发（与语言服务器无关）。
 - 诊断的 `maxItems` / `warnOnly` 等细粒度配置项已预留接口，具体客户端开关随扩展配套完善。
