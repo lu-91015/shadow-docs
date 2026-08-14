@@ -72,7 +72,7 @@ a:hover { color: var(--brand-700); }
 
 /* ===== 布局 ===== */
 .wrapper {
-  max-width: 1480px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -370,8 +370,19 @@ a:hover { color: var(--brand-700); }
 .feature-card h3 { margin: 0 0 8px; font-size: 18px; }
 .feature-card p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
 
+.home-footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.home-footer a { color: var(--brand-600); text-decoration: none; font-weight: 600; }
+.home-footer a:hover { text-decoration: underline; }
+
 /* ===== 文档页 ===== */
-.doc { max-width: 1440px; margin: 0 auto; }
+.doc { max-width: 1640px; margin: 0 auto; }
 .doc-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
 .doc-header h1 {
   font-size: 38px;
@@ -608,10 +619,10 @@ h2, h3, h4 { scroll-margin-top: 88px; }
 .doc-layout {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
+  gap: 36px;
 }
 .doc-side {
-  flex: 0 0 220px;
+  flex: 0 0 200px;
   position: sticky;
   top: 88px;
   align-self: flex-start;
@@ -671,7 +682,7 @@ h2, h3, h4 { scroll-margin-top: 88px; }
   min-width: 0;
 }
 .doc-toc {
-  flex: 0 0 220px;
+  flex: 0 0 200px;
   position: sticky;
   top: 88px;
   align-self: flex-start;

@@ -1,14 +1,14 @@
 ---
 layout: default
 title: "shadow — 系统级编程语言"
-description: "shadow 是一门原生 LLVM 后端、trait/impl、模式匹配与泛型的系统级编程语言（v0.5）。"
+description: "shadow 是一门原生 LLVM 后端、内建 trait/impl、模式匹配与泛型的粉丝向语言（v0.5）。"
 ---
 
 <section class="hero">
   <span class="badge">v{{ site.shadow_version }} · 编译管线完整自举</span>
   <h1>用 <span class="accent">shadow</span> 写系统级代码</h1>
   <p class="tagline">
-    一门原生 LLVM 后端、内建 trait/impl、模式匹配与泛型的系统级编程语言。
+    shadow 是一门原生 LLVM 后端、内建 trait/impl、模式匹配与泛型的粉丝向语言。
     语法简洁，类型严格，编译期保证内存安全。
   </p>
   <div class="hero-cta">
@@ -92,3 +92,7 @@ kimo main() -> int {
     <p>编译器由 shadow 自身实现并自举：shadow-0.5 的 shadow.exe 编译自身源码达到 fixed-point。</p>
   </div>
 </section>
+
+<footer class="home-footer">
+  <p>作者 · 李豆沙 &nbsp;·&nbsp; <a href="https://space.bilibili.com/1703797642" target="_blank" rel="noopener">哔哩哔哩主页 ↗</a></p>
+</footer>
