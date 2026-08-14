@@ -94,5 +94,5 @@ kimo main() -> int {
 </section>
 
 <footer class="home-footer">
-  <p>作者 · 李豆沙 &nbsp;·&nbsp; <a href="https://space.bilibili.com/1703797642" target="_blank" rel="noopener">哔哩哔哩主页 ↗</a></p>
+  <p>请关注 李豆沙 &nbsp;·&nbsp; <a href="https://space.bilibili.com/1703797642" target="_blank" rel="noopener">哔哩哔哩主页 ↗</a></p>
 </footer>
