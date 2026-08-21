@@ -7,7 +7,7 @@ permalink: /search.json
 {% for p in search_pages %}
   {
     "title": {{ p.title | jsonify }},
-    "url": {{ p.url | jsonify }},
+    "url": {{ p.url | relative_url | jsonify }},
     "summary": {{ p.summary | default: "" | jsonify }},
     "text": {{ p.content | strip_html | strip_newlines | replace: "  ", " " | replace: "  ", " " | truncatewords: 60 | jsonify }}
   }{% unless forloop.last %},{% endunless %}

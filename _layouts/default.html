@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  {%- comment -%}暴露 baseurl 给前端 JS（search.js 拼 /search.json 与结果链接用），子路径部署（GitHub Pages 项目页）时必须带上{%- endcomment -%}
+  <script>window.SITE_BASEURL = "{{ site.baseurl }}";</script>
 </head>
 <body>
   <header class="site-header">

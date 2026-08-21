@@ -11,7 +11,8 @@
 
   function load() {
     if (cache) return Promise.resolve(cache);
-    return fetch('/search.json')
+    var base = (typeof window.SITE_BASEURL === 'string' && window.SITE_BASEURL) ? window.SITE_BASEURL : '';
+    return fetch(base + '/search.json')
       .then(function (r) { return r.json(); })
       .then(function (d) { cache = d; return d; });
   }
