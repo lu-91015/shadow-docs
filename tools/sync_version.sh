@@ -64,14 +64,17 @@ if grep -q "version: \"$LATEST_TAG\"" "$VERSIONS"; then
 else
   # 旧版本 latest 全部置 false，再在顶部追加新条目
   sed -i -E "s/^(  latest: )true/\1false/" "$VERSIONS"
-  DOWNLOAD="https://github.com/${GH_REPO}/releases/download/${LATEST_TAG}/shadow-${LATEST_TAG}-setup.exe"
+  WIN_URL="https://github.com/${GH_REPO}/releases/download/${LATEST_TAG}/shadow-${LATEST_TAG}-windows-x86_64.exe"
+  LIN_URL="https://github.com/${GH_REPO}/releases/download/${LATEST_TAG}/shadow-${LATEST_TAG}-linux-x86_64.tar.gz"
   {
     echo "- version: \"$LATEST_TAG\""
     echo "  date: \"$(date +%Y-%m-%d)\""
     echo "  latest: true"
     echo "  channel: stable"
     echo "  notes: \"TODO: 填写 ${LATEST_TAG} 的发布说明\""
-    echo "  download: \"$DOWNLOAD\""
+    echo "  downloads:"
+    echo "    windows: \"$WIN_URL\""
+    echo "    linux: \"$LIN_URL\""
     echo ""
   } | cat - "$VERSIONS" > "$VERSIONS.tmp" && mv "$VERSIONS.tmp" "$VERSIONS"
   echo "→ 已追加 $LATEST_TAG 到 $VERSIONS（请补全 notes 与历史版本的 latest 标记）"

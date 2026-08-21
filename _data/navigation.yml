@@ -31,6 +31,7 @@ sections:
       - /functions/
       - /structs/
       - /enums/
+      - /trait-impl/
       - /pattern-matching/
       - /error-handling/
       - /modules/
@@ -42,6 +43,7 @@ sections:
       - { title: "函数与闭包", url: /functions/ }
       - { title: "结构体", url: /structs/ }
       - { title: "枚举", url: /enums/ }
+      - { title: "trait / interface", url: /trait-impl/ }
       - { title: "模式匹配", url: /pattern-matching/ }
       - { title: "错误处理", url: /error-handling/ }
       - { title: "模块系统", url: /modules/ }

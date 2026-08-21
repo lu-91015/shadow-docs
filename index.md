@@ -12,10 +12,12 @@ description: "shadow 是一门原生 LLVM 后端、内建 trait/impl、模式匹
     语法简洁，类型严格，编译期保证内存安全。
   </p>
   <div class="hero-cta">
-    <a class="btn btn-primary" href="https://github.com/{{ site.github_repo }}/releases/download/{{ site.shadow_version }}/shadow-{{ site.shadow_version }}-setup.exe">⬇ 下载 shadow {{ site.shadow_version }}</a>
+    {% assign latest = site.data.versions | where: "latest", true | first %}
+    <a class="btn btn-primary" href="{{ latest.downloads.windows }}">⬇ 下载 shadow {{ site.shadow_version }}（Windows）</a>
+    <a class="btn btn-secondary" href="{{ latest.downloads.linux }}">Linux ⬇</a>
     <a class="btn btn-secondary" href="https://github.com/{{ site.vscode_repo }}/releases/download/{{ site.vscode_version }}/shadow-{{ site.vscode_version }}.vsix">VS Code 扩展 ⬇</a>
     <a class="btn btn-secondary" href="{{ '/getting-started/' | relative_url }}">快速开始 →</a>
-    <a class="btn btn-secondary" href="{{ '/versions/' | relative_url }}">历史版本</a>
+    <a class="btn btn-secondary" href="{{ '/versions/' | relative_url }}">全部平台 / 历史版本</a>
   </div>
 
   <div class="hero-preview">

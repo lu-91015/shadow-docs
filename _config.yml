@@ -6,7 +6,7 @@ lang: zh-CN
 
 # ===== 版本信息（发版时只需改这里，或用 tools/sync_version.sh 自动同步）=====
 # 全站下载链接、首页徽标、版本页「最新」判定都读取这个变量。
-shadow_version: "0.5.0"
+shadow_version: "0.5.1"
 # GitHub 仓库（owner/repo），用于拼下载直链
 github_repo: "lu-91015/shadow"
 

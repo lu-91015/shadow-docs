@@ -3,7 +3,7 @@ layout: doc
 title: "模式匹配"
 summary: "match 表达式与语句、枚举载荷解构、字面量匹配与通配符。"
 permalink: /pattern-matching/
-prev: /enums/
+prev: /trait-impl/
 next: /error-handling/
 ---
 

@@ -1,12 +1,22 @@
 # shadow 发布版本清单（按时间倒序，最新在最前）
 # - latest: true  标记当前最新稳定版（与 _config.yml 的 shadow_version 保持一致）
-# - download:     安装包直链（Windows 离线自包含，约 200 MB）
+# - downloads:     各平台安装包直链（键为平台：windows / linux）
 # 新增版本：在顶部加一条，并把旧条的 latest 改为 false；
 #          或直接运行 tools/sync_version.sh 自动从编译器仓库同步。
 
-- version: "0.5.0"
-  date: "2026-08-14"
+- version: "0.5.1"
+  date: "2026-08-21"
   latest: true
   channel: stable
+  notes: "新增 Linux（x86_64）平台支持；Windows 改为便携 exe（shadow-0.5.1-windows-x86_64.exe），不再依赖安装器；Linux 提供 shadow-0.5.1-linux-x86_64.tar.gz。两者均为离线自包含构建（内置 LLVM 工具链 + 标准库）。"
+  downloads:
+    windows: "https://github.com/lu-91015/shadow/releases/download/0.5.1/shadow-0.5.1-windows-x86_64.exe"
+    linux: "https://github.com/lu-91015/shadow/releases/download/0.5.1/shadow-0.5.1-linux-x86_64.tar.gz"
+
+- version: "0.5.0"
+  date: "2026-08-14"
+  latest: false
+  channel: stable
   notes: "首个发布版：编译管线完整自举 + --exe 模式；安装包离线自包含（内置 LLVM 工具链）。"
-  download: "https://github.com/lu-91015/shadow/releases/download/0.5.0/shadow-0.5.0-setup.exe"
+  downloads:
+    windows: "https://github.com/lu-91015/shadow/releases/download/0.5.0/shadow-0.5.0-setup.exe"

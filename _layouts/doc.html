@@ -4,7 +4,8 @@ layout: default
 <article class="doc">
   <header class="doc-header">
     <h1>{{ page.title }}</h1>
-    {% if page.summary %}<p class="doc-summary">{{ page.summary }}</p>{% endif %}
+    {%- comment -%}front matter 不解析 Liquid，故用 __SHADOW_VERSION__ 占位符，渲染时替换为真实版本号{%- endcomment -%}
+    {% if page.summary %}<p class="doc-summary">{{ page.summary | replace: "__SHADOW_VERSION__", site.shadow_version }}</p>{% endif %}
   </header>
   <div class="doc-layout">
     <aside class="doc-side" aria-label="分区目录">

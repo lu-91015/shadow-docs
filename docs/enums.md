@@ -4,7 +4,7 @@ title: "枚举"
 summary: "enum 定义、泛型载荷变体与无载荷变体引用。"
 permalink: /enums/
 prev: /structs/
-next: /pattern-matching/
+next: /trait-impl/
 ---
 
 `enum` 定义代数数据类型（和类型）。每个变体可携带载荷（数据），是 shadow 表达"可选值"、"状态机"、"错误类型"的核心工具。

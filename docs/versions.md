@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "shadow 版本"
-summary: "所有发布版本与下载入口。当前最新稳定版：{{ site.shadow_version }}。"
+summary: "所有发布版本与下载入口。当前最新稳定版：__SHADOW_VERSION__（Windows / Linux x86_64）。"
 permalink: /versions/
 prev: /install/
 next: /getting-started/
@@ -9,15 +9,20 @@ next: /getting-started/
 
 ## 当前版本
 
-当前最新稳定版本为 **shadow {{ site.shadow_version }}**。
+当前最新稳定版本为 **shadow {{ site.shadow_version }}**，支持 **Windows** 与 **Linux（x86_64）** 双平台，下载各自独立：
 
-<a class="btn btn-primary" href="https://github.com/{{ site.github_repo }}/releases/download/{{ site.shadow_version }}/shadow-{{ site.shadow_version }}-setup.exe">⬇ 下载 shadow {{ site.shadow_version }}（Windows，约 200 MB）</a>
+{% assign latest = site.data.versions | where: "latest", true | first %}
+
+| 平台 | 下载 |
+| --- | --- |
+| Windows（x86_64） | {% if latest.downloads.windows %}<a class="btn btn-sm btn-primary" href="{{ latest.downloads.windows }}">{{ latest.downloads.windows | split: "/" | last }}</a>{% else %}—{% endif %} |
+| Linux（x86_64） | {% if latest.downloads.linux %}<a class="btn btn-sm btn-primary" href="{{ latest.downloads.linux }}">{{ latest.downloads.linux | split: "/" | last }}</a>{% else %}—{% endif %} |
 
 安装与验证步骤见 [安装 shadow]({{ '/install/' | relative_url }})。
 
 ## 所有版本
 
-下表列出 shadow 的全部发布版本。最新版以高亮标记。
+下表列出 shadow 的全部发布版本，Windows 与 Linux 下载分列。最新版以高亮标记。
 
 <div class="versions-table-wrap">
 <table class="versions-table">
@@ -27,7 +32,8 @@ next: /getting-started/
       <th>渠道</th>
       <th>发布日期</th>
       <th>说明</th>
-      <th>下载</th>
+      <th>Windows</th>
+      <th>Linux</th>
     </tr>
   </thead>
   <tbody>
@@ -37,7 +43,8 @@ next: /getting-started/
       <td>{{ v.channel | default: "stable" }}</td>
       <td>{{ v.date }}</td>
       <td>{{ v.notes }}</td>
-      <td><a class="btn btn-sm btn-primary" href="{{ v.download }}">setup.exe</a></td>
+      <td>{% if v.downloads.windows %}{% assign wf = v.downloads.windows | split: "/" | last %}<a class="btn btn-sm btn-primary" href="{{ v.downloads.windows }}">{{ wf }}</a>{% else %}—{% endif %}</td>
+      <td>{% if v.downloads.linux %}{% assign lf = v.downloads.linux | split: "/" | last %}<a class="btn btn-sm btn-primary" href="{{ v.downloads.linux }}">{{ lf }}</a>{% else %}—{% endif %}</td>
     </tr>
   {% endfor %}
   </tbody>
@@ -52,11 +59,15 @@ next: /getting-started/
 - **发布日期**：{{ v.date }}
 - **渠道**：{{ v.channel | default: "stable" }}
 - **说明**：{{ v.notes }}
-- **下载**：<{{ v.download }}>
+- **下载**：
+{% if v.downloads.windows %}  - Windows：<{{ v.downloads.windows }}>
+{% endif %}
+{% if v.downloads.linux %}  - Linux：<{{ v.downloads.linux }}>
+{% endif %}
 
 {% endfor %}
 
 <div class="callout tip">
   <p class="callout-title">提示</p>
-  <p>发版后只需更新 <code>_config.yml</code> 的 <code>shadow_version</code>，或在 <code>_data/versions.yml</code> 顶部追加一条（也可运行 <code>tools/sync_version.sh</code> 自动从编译器仓库同步最新 git tag）。全站下载链接会随之更新。</p>
+  <p>发版后只需更新 <code>_config.yml</code> 的 <code>shadow_version</code>，并在 <code>_data/versions.yml</code> 顶部追加一条（含 <code>downloads.windows</code> / <code>downloads.linux</code> 直链），并将旧条 <code>latest</code> 置为 <code>false</code>；也可运行 <code>tools/sync_version.sh</code> 自动从编译器仓库同步最新 git tag。全站下载链接会随之更新。</p>
 </div>
