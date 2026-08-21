@@ -51,7 +51,7 @@ while (i < 3) {
 // 输出: 0 1 2
 ```
 
-while 常用于带索引的数组遍历（见[类型系统 - 数组](/types/#数组-arrayt)）：
+while 常用于带索引的数组遍历（见[类型系统 - 数组]({{ "/types/#数组-arrayt" | relative_url }})）：
 
 ```shadow
 let arr = [10, 20, 30];
@@ -139,7 +139,7 @@ while (i < 10) {
 
 ## return
 
-`return expr;` 从函数返回。在 `match` 臂内 `return` 可提前退出整个函数（见[模式匹配](/pattern-matching/#语句级-match)）。
+`return expr;` 从函数返回。在 `match` 臂内 `return` 可提前退出整个函数（见[模式匹配]({{ "/pattern-matching/#语句级-match" | relative_url }})）。
 
 ```shadow
 kimo find(arr: array<int>) -> int {
@@ -184,5 +184,5 @@ kimo main() -> int {
 
 ## 下一步
 
-- [函数与闭包](/functions/)：把这些逻辑封装成可复用单元。
-- [模式匹配](/pattern-matching/)：比 if/else 更强的分支控制。
+- [函数与闭包]({{ "/functions/" | relative_url }})：把这些逻辑封装成可复用单元。
+- [模式匹配]({{ "/pattern-matching/" | relative_url }})：比 if/else 更强的分支控制。

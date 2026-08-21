@@ -157,9 +157,9 @@ pub struct PublicPoint {
 }
 ```
 
-详见[模块系统](/modules/)。
+详见[模块系统]({{ "/modules/" | relative_url }})。
 
 ## 下一步
 
-- [枚举](/enums/)：表示代数数据类型（和类型）。
-- [模式匹配](/pattern-matching/)：解构 struct 字段。
+- [枚举]({{ "/enums/" | relative_url }})：表示代数数据类型（和类型）。
+- [模式匹配]({{ "/pattern-matching/" | relative_url }})：解构 struct 字段。

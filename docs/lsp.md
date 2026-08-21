@@ -14,7 +14,7 @@ shadow 0.5 把**语言服务器**作为编译器的一等公民内置在 `shadow
 **LSP 3.17** 规范，通过 **stdio 上的 JSON-RPC（Content-Length 分帧）** 与任何标准 LSP 客户端通信。
 
 也就是说：你不需要额外安装语言服务器二进制——只要装好了 `shadow`（参见
-[安装 shadow](/install/)），就能直接把编辑器接到 `shadow --lsp` 上获得语法高亮、
+[安装 shadow]({{ "/install/" | relative_url }})），就能直接把编辑器接到 `shadow --lsp` 上获得语法高亮、
 补全、悬停、跳转、引用、重命名、格式化、语义着色、内联提示、诊断等完整 IDE 体验。
 
 > 编译器即库：`shadow` 的编译管线以库形式（`compile_api`）暴露，CLI 查询命令与 LSP
@@ -34,7 +34,7 @@ shadow --lsp
 - 文档同步：客户端通过 `textDocument/didOpen`、`textDocument/didChange`、
   `textDocument/didSave`、`textDocument/didClose` 维护内存中的文档版本。
 - 标准库解析：LSP 同样走 `main_std_root` 机制——`import std.*` 从 `<shadow.exe>/../src/std`
-  解析（安装后由安装器摆好，见[安装文档](/install/)）。因此只要在正确安装/仓库根环境下启动，
+  解析（安装后由安装器摆好，见[安装文档]({{ "/install/" | relative_url }})）。因此只要在正确安装/仓库根环境下启动，
   标准库补全与跳转即开即用。
 
 ## 编辑器集成

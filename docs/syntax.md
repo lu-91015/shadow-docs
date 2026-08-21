@@ -15,7 +15,7 @@ next: /types/
 dsb my_module;
 ```
 
-模块名用于跨文件 `import` 引用（详见[模块系统](/modules/)）。一个文件 = 一个模块。
+模块名用于跨文件 `import` 引用（详见[模块系统]({{ "/modules/" | relative_url }})）。一个文件 = 一个模块。
 
 ## 变量声明
 
@@ -77,7 +77,7 @@ let greeting = "Hello, World!";
 let empty = "";
 ```
 
-字符串支持 `+` 拼接，以及一组运行时函数（`str_split` / `str_join` / `str_format` 等，详见[类型系统 - 字符串](/types/#字符串)）。
+字符串支持 `+` 拼接，以及一组运行时函数（`str_split` / `str_join` / `str_format` 等，详见[类型系统 - 字符串]({{ "/types/#字符串" | relative_url }})）。
 
 ## 数组字面量
 
@@ -88,7 +88,7 @@ let arr = [1, 2, 3];           // array<int>
 let names = ["Alice", "Bob"];  // array<string>
 ```
 
-数组细节见[类型系统 - array](/types/#数组-arrayt)。
+数组细节见[类型系统 - array]({{ "/types/#数组-arrayt" | relative_url }})。
 
 ## 注释
 
@@ -154,5 +154,5 @@ kimo main() -> int {
 
 ## 下一步
 
-- [类型系统](/types/)：深入 string / array / dict / set 容器。
-- [控制流](/control-flow/)：if / while / for 详解。
+- [类型系统]({{ "/types/" | relative_url }})：深入 string / array / dict / set 容器。
+- [控制流]({{ "/control-flow/" | relative_url }})：if / while / for 详解。

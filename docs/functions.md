@@ -163,7 +163,7 @@ pub kimo public_api() -> int {
 }
 ```
 
-详见[模块系统](/modules/)。
+详见[模块系统]({{ "/modules/" | relative_url }})。
 
 ## 完整示例
 
@@ -196,5 +196,5 @@ kimo main() -> int {
 
 ## 下一步
 
-- [结构体](/structs/)：自定义复合类型，配合函数构建抽象。
-- [枚举](/enums/)：用 enum 表达代数数据类型。
+- [结构体]({{ "/structs/" | relative_url }})：自定义复合类型，配合函数构建抽象。
+- [枚举]({{ "/enums/" | relative_url }})：用 enum 表达代数数据类型。

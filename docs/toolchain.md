@@ -75,7 +75,7 @@ build/build_resident.exe
 
 <div class="callout tip">
   <p class="callout-title">工具链已 shadow 原生化</p>
-  <p>旧的 <code>build_shadow.sh</code> / <code>build_resident.sh</code> / <code>build_run_tests.sh</code> 已由 <code>tools/build_shadow.shadow</code> / <code>tools/build_resident.shadow</code> / <code>tools/build_run_tests.shadow</code> 取代，三者均经冻结的 <code>build/shadow.exe</code> 编译并验证收敛到固定点。完整的构建步骤见[构建指南](/building/)。</p>
+  <p>旧的 <code>build_shadow.sh</code> / <code>build_resident.sh</code> / <code>build_run_tests.sh</code> 已由 <code>tools/build_shadow.shadow</code> / <code>tools/build_resident.shadow</code> / <code>tools/build_run_tests.shadow</code> 取代，三者均经冻结的 <code>build/shadow.exe</code> 编译并验证收敛到固定点。完整的构建步骤见[构建指南]({{ "/building/" | relative_url }})。</p>
 </div>
 
 ## 生成可执行文件
@@ -175,6 +175,6 @@ shadow-0.5/
 
 ## 下一步
 
-- 阅读[构建指南](/building/)了解自举与测试的完整步骤。
+- 阅读[构建指南]({{ "/building/" | relative_url }})了解自举与测试的完整步骤。
 - 返回[首页](/)。
-- 阅读[关于 shadow](/about/)了解项目路线图。
+- 阅读[关于 shadow]({{ "/about/" | relative_url }})了解项目路线图。

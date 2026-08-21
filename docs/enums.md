@@ -137,7 +137,7 @@ kimo main() -> int {
 }
 ```
 
-match 详解见[模式匹配](/pattern-matching/)。
+match 详解见[模式匹配]({{ "/pattern-matching/" | relative_url }})。
 
 ## 常见模式
 
@@ -193,5 +193,5 @@ kimo next_state(s: State) -> State {
 
 ## 下一步
 
-- [模式匹配](/pattern-matching/)：用 match 处理 enum 的所有变体。
-- [错误处理](/error-handling/)：用 enum 表达错误，或用 try/catch。
+- [模式匹配]({{ "/pattern-matching/" | relative_url }})：用 match 处理 enum 的所有变体。
+- [错误处理]({{ "/error-handling/" | relative_url }})：用 enum 表达错误，或用 try/catch。

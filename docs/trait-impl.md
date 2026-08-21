@@ -142,5 +142,5 @@ kimo main() -> int {
 
 ## 下一步
 
-- [模式匹配](/pattern-matching/)：用 `match` 解构枚举与数据类型。
-- [类型系统](/types/)：回顾容器与泛型。
+- [模式匹配]({{ "/pattern-matching/" | relative_url }})：用 `match` 解构枚举与数据类型。
+- [类型系统]({{ "/types/" | relative_url }})：回顾容器与泛型。

@@ -7,7 +7,7 @@ prev: /lsp/
 next: /api/
 ---
 
-本文面向**开发者**，说明如何从源码构建 shadow 编译器、跑通自举固定点，以及运行测试套件。普通用户请看[快速开始](/getting-started/)与[工具链](/toolchain/)。
+本文面向**开发者**，说明如何从源码构建 shadow 编译器、跑通自举固定点，以及运行测试套件。普通用户请看[快速开始]({{ "/getting-started/" | relative_url }})与[工具链]({{ "/toolchain/" | relative_url }})。
 
 ## 环境要求
 
@@ -97,5 +97,5 @@ build/build_shadow.exe
 
 ## 下一步
 
-- 返回[工具链](/toolchain/)查看编译器命令与项目结构。
-- 阅读[关于 shadow](/about/)了解项目路线图。
+- 返回[工具链]({{ "/toolchain/" | relative_url }})查看编译器命令与项目结构。
+- 阅读[关于 shadow]({{ "/about/" | relative_url }})了解项目路线图。

@@ -210,5 +210,5 @@ kimo main() -> int {
 
 ## 下一步
 
-- [错误处理](/error-handling/)：try/catch 与 throw。
-- [模块系统](/modules/)：组织多文件项目。
+- [错误处理]({{ "/error-handling/" | relative_url }})：try/catch 与 throw。
+- [模块系统]({{ "/modules/" | relative_url }})：组织多文件项目。

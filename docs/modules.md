@@ -213,5 +213,5 @@ shadow main.shadow -o out.ll
 
 ## 下一步
 
-- [库参考](/api/)：内置函数与标准库 API。
-- [工具链](/toolchain/)：编译器、IR 生成与构建流程。
+- [库参考]({{ "/api/" | relative_url }})：内置函数与标准库 API。
+- [工具链]({{ "/toolchain/" | relative_url }})：编译器、IR 生成与构建流程。

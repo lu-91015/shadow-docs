@@ -24,7 +24,7 @@ cd myapp
 ```
 
 它会在目录里生成 `shadow.sbg` 项目清单（包名取目录名，版本 `0.1.0`），记录包信息与依赖。
-包管理、依赖声明与 `.spk` 包的完整用法见 [包管理（SPK）](/package-manager/)。
+包管理、依赖声明与 `.spk` 包的完整用法见 [包管理（SPK）]({{ "/package-manager/" | relative_url }})。
 
 ## 第一个程序
 
@@ -71,10 +71,10 @@ kimo main() -> int {   // 入口函数，返回 int
 }
 ```
 
-- `dsb` —— 声明当前文件所属模块（详见[模块系统](/modules/)）。
-- `kimo` —— 函数定义关键字（详见[函数与闭包](/functions/)）。
+- `dsb` —— 声明当前文件所属模块（详见[模块系统]({{ "/modules/" | relative_url }})）。
+- `kimo` —— 函数定义关键字（详见[函数与闭包]({{ "/functions/" | relative_url }})）。
 - `main` —— 程序入口，约定返回 `int`，`0` 表示成功。
-- `let` —— 变量绑定，类型可省略由推导决定（详见[语法基础](/syntax/)）。
+- `let` —— 变量绑定，类型可省略由推导决定（详见[语法基础]({{ "/syntax/" | relative_url }})）。
 
 ## 进阶：使用容器与循环
 
@@ -115,9 +115,9 @@ kimo main() -> int {
 
 ## 下一步
 
-- [语法基础](/syntax/)：变量、字面量与基础类型。
-- [类型系统](/types/)：string / array / dict / set 容器详解。
-- [函数与闭包](/functions/)：`kimo` 定义与闭包捕获。
+- [语法基础]({{ "/syntax/" | relative_url }})：变量、字面量与基础类型。
+- [类型系统]({{ "/types/" | relative_url }})：string / array / dict / set 容器详解。
+- [函数与闭包]({{ "/functions/" | relative_url }})：`kimo` 定义与闭包捕获。
 
 <div class="callout tip">
   <p class="callout-title">提示</p>

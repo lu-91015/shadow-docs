@@ -101,7 +101,7 @@ kimo main() -> int {
 
 ### 遍历
 
-用 `for (x in arr)` 迭代（详见[控制流](/control-flow/)）：
+用 `for (x in arr)` 迭代（详见[控制流]({{ "/control-flow/" | relative_url }})）：
 
 ```shadow
 let arr = [1, 2, 3];
@@ -232,5 +232,5 @@ for (x in s) {
 
 ## 下一步
 
-- [控制流](/control-flow/)：if / while / for 遍历详解。
-- [函数与闭包](/functions/)：把这些类型传给函数。
+- [控制流]({{ "/control-flow/" | relative_url }})：if / while / for 遍历详解。
+- [函数与闭包]({{ "/functions/" | relative_url }})：把这些类型传给函数。
