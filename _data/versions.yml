@@ -4,9 +4,18 @@
 # 新增版本：在顶部加一条，并把旧条的 latest 改为 false；
 #          或直接运行 tools/sync_version.sh 自动从编译器仓库同步。
 
+- version: "0.5.2"
+  date: "2026-09-12"
+  latest: true
+  channel: stable
+  notes: "0.5.2 发布版：Windows 与 Linux（x86_64）双平台离线自包含构建（内置 LLVM 工具链 + 标准库）。重点变更——GC 带内对象头大重构（W3）：废弃外部 GCMetaMap，元数据唯一来源改为 16B 带内前置头，彻底消除线性清扫误收与锁序环；多项性能优化使 matmul / quicksort / str_reverse / sum_loop / float_pi / string_find 等多个基准反超同算法 Go 实现；新增位运算、自增自减、位非 ~、复合赋值 %=、多 let 声明、数组 pop、十六/二进制字面量 0x/0b、typeof 内省、嵌套注释、带载荷枚举 ADT match 解构等语言特性；双平台统一自举编排器（BUILD_TARGETS=windows,linux）与 /Brepro 逐字节可重现构建；自托管固定点达成（FIXEDPOINT_OK）。"
+  downloads:
+    windows: "https://github.com/lu-91015/shadow/releases/download/0.5.2/shadow-0.5.2-windows-x86_64.exe"
+    linux: "https://github.com/lu-91015/shadow/releases/download/0.5.2/shadow-0.5.2-linux-x86_64.tar.gz"
+
 - version: "0.5.1"
   date: "2026-08-21"
-  latest: true
+  latest: false
   channel: stable
   notes: "新增 Linux（x86_64）平台支持；Windows 改为便携 exe（shadow-0.5.1-windows-x86_64.exe），不再依赖安装器；Linux 提供 shadow-0.5.1-linux-x86_64.tar.gz。两者均为离线自包含构建（内置 LLVM 工具链 + 标准库）。"
   downloads:
